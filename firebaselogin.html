@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.4);
+        /* text-align: center; */
+        width: 350px;
+        max-width: 80%;
+        margin: auto;
+        box-sizing: border-box;
+      }
+
+      h2 {
+        color: #fff;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .social-buttons {
+        margin-top: 20px;
+      }
+
+      .social-buttons button {
+        margin: 10px 0;
+        padding: 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .social-buttons button.google {
+        background-color: #dd4b39;
+      }
+
+      .social-buttons button.github {
+        background-color: #333;
+      }
+
+      .social-buttons button.facebook {
+        background-color: #1da1f2;
+      }
+      .social-buttons button.phone {
+        background-color: #333;
+      }
+      .social-buttons button.otp {
+        background-color: #333;
+      }
+
+      .background-clip {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        width: auto;
+      }
+      .social-buttons button + button {
+        margin-top: 10px;
+      }
+      label {
+        color: #fff;
+        text-align: left;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-clip">
+      <video autoplay loop muted plays-inline>
+        <source src="./video.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="login-container">
+      <h2>Login Page</h2>
+      <div class="social-buttons">
+        <label>Login using Google:</label>
+        <button id="google-login-btn" class="google">
+          <i class="ri-google-fill"></i> Login with Google</button
+        ><br />
+        <label>Login using GitHub:</label>
+        <button id="github-login-btn" class="github">
+          <i class="ri-github-fill"></i> Login with GitHub</button
+        ><br />
+        <label>Login using Facebook:</label>
+        <button id="facebook-login-btn" class="facebook">
+          <i class="ri-facebook-fill"></i> Login with Facebook
+        </button>
+        <label>Login using Phone Number:</label><br /><br />
+        <form id="phone-form">
+          <label for="phone">Phone Number:</label>
+          <input type="text" id="phone" required />
+          <button id="phone-login-btn" type="button" class="phone">
+            Send OTP
+          </button>
+        </form>
+
+        <form id="otp-form">
+          <label for="otp">Enter OTP:</label>
+          <input type="text" id="otp" required />
+          <button
+            id="otp-login-btn"
+            type="button"
+            class="otp"
+            onclick="verifyOTP()"
+          >
+            Verify OTP
+          </button>
+        </form>
+      </div>
+    </div>
+    <script defer type="module" src="./firebaselogin.js"></script>
+  </body>
+</html>
